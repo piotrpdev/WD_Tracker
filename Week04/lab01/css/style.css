@@ -1,0 +1,12 @@
+p {
+  color: navy;
+}
+
+h1, h2 {
+  color: white;
+  background-color: #0000ff
+}
+
+blockquote {
+  background-color: rgb(200, 200, 200)
+}
