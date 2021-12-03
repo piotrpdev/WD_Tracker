@@ -31,6 +31,13 @@
         font-weight: bold;
         text-transform: uppercase;
       }
+
+      form#booking input[type="text"]:invalid,
+      form#booking input[type="date"]:invalid,
+      form#booking input[type="email"]:invalid {
+        color: red;
+        border-color: red;
+      }
     </style>
   </head>
 
@@ -103,7 +110,7 @@
             </div>
             <div class="inline field">
               <label for="date" class="three wide field">Booking Date</label>
-              <input type="date" required class="eight wide field" min="17" max="80" name="date" id="date" title="Please enter a suitable booking date" />
+              <input type="date" required class="eight wide field" name="date" id="date" title="Please enter a suitable booking date" />
             </div>
             <div class="inline field">
               <label for="date" class="three wide field">Car</label>
