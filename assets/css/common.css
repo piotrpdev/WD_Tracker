@@ -1,0 +1,62 @@
+:root {
+    --bg: antiquewhite;
+    --bg-accent: beige;
+}
+
+body {
+    background-color: var(--bg);
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    padding: 0.3em;
+}
+
+.ui.main.text {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.main-content {
+    margin-top: 2em !important;
+    padding-bottom: 2em;
+}
+
+.ui.segment,
+.ui.segment.piled {
+    background-color: var(--bg-accent);
+}
+
+footer {
+    background-color: var(--bg-accent) !important;
+    padding: 2em 0em !important;
+}
+
+.ui.piled.segments:after,
+.ui.piled.segments:before,
+.ui.piled.segment:after,
+.ui.piled.segment:before,
+.ui.vertical.menu {
+    background-color: var(--bg-accent);
+}
+
+.ui.vertical.menu {
+    height: fit-content;
+}
+
+.desktop-only {
+    display: none !important;
+}
+
+.ui.segment.piled:last-child {
+    margin-bottom: 8em;
+}
+
+@media (min-width:1024px) {
+    .desktop-only {
+        display: block !important;
+    }
+}
