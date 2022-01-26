@@ -1,4 +1,4 @@
-window.onload = initMenu;
+window.onload = start;
 
 function initMenu() {
     const weekNodeList = Array.from(document.querySelectorAll("h2")).filter(
@@ -33,4 +33,20 @@ function initMenu() {
     });
 
     weekItemList.forEach((m) => menu.appendChild(m));
+}
+
+function addCopyright() {
+    const footerDiv = document.querySelector("footer div");
+    const year = new Date().getFullYear();
+
+    const copyright = document.createElement("p");
+    copyright.innerHTML = `Copyright &copy; 2021-${year} Piotr Bogdan Placzek (20097618)`;
+
+    footerDiv.appendChild(copyright);
+}
+
+function start() {
+    initMenu();
+
+    addCopyright();
 }

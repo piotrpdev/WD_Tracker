@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab Three</title>
+  </head>
+  <body>
+    <script>
+        const record = "Jane Doe:45:60:80";
+
+        const recordArray = record.split(":");
+
+        document.write("<h1>The records are " + recordArray.slice(1).join(" ") + "</h1>");
+
+        document.write("<h2>The result for " + recordArray[0] + " is " + (recordArray[1] * 0.2 + recordArray[2] * 0.3 + recordArray[3] * 0.5) + "</h2>");
+    </script>
+  </body>
+</html>

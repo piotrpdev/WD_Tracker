@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Using Mathematical Functions</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
+    <link href="css/mycss.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1>Using Mathematical Functions</h1>
+    </header>
+
+    <section class="ui container">
+      <table class="ui celled striped selectable table">
+        <thead>
+          <tr>
+            <th>Number</th>
+            <th>Squared</th>
+            <th>Square Root</th>
+          </tr>
+        </thead>
+      </table>
+    </section>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script>
+        const table = document.querySelector("table");
+
+        for (let i = 1; i <= 10; i++) {
+          const row = document.createElement("tr");
+          const number = document.createElement("td");
+          const squared = document.createElement("td");
+          const squareRoot = document.createElement("td");
+
+          number.textContent = i;
+          squared.textContent = Math.pow(i, 2);
+          squareRoot.textContent = Math.sqrt(i);
+
+          row.appendChild(number);
+          row.appendChild(squared);
+          row.appendChild(squareRoot);
+
+          table.appendChild(row);
+        }
+    </script>
+  </body>
+</html>
