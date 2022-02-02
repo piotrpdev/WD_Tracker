@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Lab 2 Array (forEach)</title>
+</head>
+
+<body>
+    <h1>Array (forEach)</h1>
+    <script>
+
+        const people = [
+            { firstName: 'Benjamin', lastName: 'Franklin', yearOfDeath: 1790 },
+            { firstName: 'Thomas', lastName: 'Edison', yearOfDeath: 1931 },
+            { firstName: 'Franklin', lastName: 'Roosevelt', yearOfDeath: 1945 },
+            { firstName: 'Napolean', lastName: 'Bonaparte', yearOfDeath: 1821 },
+            { firstName: 'Abraham', lastName: 'Lincoln', yearOfDeath: 1865 },
+            { firstName: 'Mother', lastName: 'Theresa', yearOfDeath: 1962 },
+            { firstName: 'Mahatma', lastName: 'Gandhi', yearOfDeath: 1948 },
+            { firstName: 'Winston', lastName: 'Churchill', yearOfDeath: 1965 },
+            { firstName: 'Charles', lastName: 'Darwin', yearOfDeath: 1882 },
+            { firstName: 'Albert', lastName: 'Einstein', yearOfDeath: 1955 },
+            { firstName: 'Pablo', lastName: 'Picasso', yearOfDeath: 1973 },
+            { firstName: 'Ludwig', lastName: 'Beethoven', yearOfDeath: 1827 },
+            { firstName: 'Walt', lastName: 'Disney', yearOfDeath: 1966 },
+            { firstName: 'Henry', lastName: 'Ford', yearOfDeath: 1947 },
+            { firstName: 'Steve', lastName: 'Jobs', yearOfDeath: 2012 }
+        ]
+
+        document.write("<h2>Output each person in the array</h2>");
+
+        people.forEach(({ firstName, lastName, yearOfDeath }) => document.write(`${firstName} ${lastName} ${yearOfDeath}<br>`));
+
+        document.write("<h2>Make a second array(fNames) that contains only the first name of each person. Output the content of fNames.</h2>");
+
+        const fNames = [];
+        people.forEach(({ firstName }) => fNames.push(firstName));
+
+        document.write(`<p>${fNames.join("<br>")}</p><br>`);
+
+        const diedAfter1950 = [];
+
+        document.write("<h2>Make a third array (diedAfter1950) that contains people that have died after 1950. Output the content of died after 1950.</h2>");
+
+        people.forEach(({ firstName, lastName, yearOfDeath }) => {
+            if (yearOfDeath > 1950) {
+                diedAfter1950.push(`${firstName} ${lastName} ${yearOfDeath}`);
+            }
+        });
+
+        document.write(`<p>${diedAfter1950.join("<br>")}</p><br>`);
+    </script>
+</body>
+
+</html>

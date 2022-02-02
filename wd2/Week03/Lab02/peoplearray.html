@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week Three</title>
+</head>
+
+<body>
+    <script>
+        let people = [
+            'Benjamin Franklin',
+            'Thomas Edison',
+            'Franklin Roosevelt',
+            'Mahatma Gandhi',
+            'Napoleon Bonaparte',
+            'Abraham Lincoln'
+        ]
+
+        const resetPeople = () => {
+            people = [
+                'Benjamin Franklin',
+                'Thomas Edison',
+                'Franklin Roosevelt',
+                'Mahatma Gandhi',
+                'Napoleon Bonaparte',
+                'Abraham Lincoln'
+            ]
+        }
+
+        document.write(`<h1>People Array</h1>`);
+        document.write(`<p>${people.join(", ")}</p>`);
+        document.write(`<p>Length: ${people.length}</p><br>`);
+
+        document.write(`<h2>What is the index of Mahatma Gandhi in this list of people? Use indexOf().</h2>`);
+        document.write(`<p>Index of Mahatma Gandhi: ${people.indexOf('Mahatma Gandhi')}</p><br>`);
+
+        document.write(`<h2>Add Winston Churchill and Albert Einstein to the start of the list with unshift().</h2>`);
+        people.unshift('Winston Churchill', 'Albert Einstein')
+        document.write(`<p>${people.join(", ")}</p><br>`);
+
+        resetPeople();
+
+        document.write(`<h2>Add Charles Darwin and Walt Disney to the end of the list with push().
+</h2>`);
+        people.push('Charles Darwin', 'Walt Disney')
+        document.write(`<p>${people.join(", ")}</p><br>`);
+
+        resetPeople();
+
+        document.write(`<h2>Add Pablo Picasso and Ludwig van Beethoven after Mahatma Gandhi. Use splice(). Remember to use indexOf() to find the position of Mahatma Gandhi.</h2>`);
+        people.splice(people.indexOf('Mahatma Gandhi') + 1, 0, 'Pablo Picasso', 'Ludwig van Beethoven');
+        document.write(`<p>${people.join(", ")}</p><br>`);
+
+        resetPeople();
+
+        document.write(`<h2>Remove Benjamin Franklin and Thomas Edison from the start of the list with shift().</h2>`);
+        people.shift();
+        people.shift();
+
+        document.write(`<p>${people.join(", ")}</p><br>`);
+
+        resetPeople();
+
+        document.write(`<h2>Remove Napoleon Bonaparte and Abraham Lincoln from the end of the list with pop().</h2>`);
+        people.pop();
+        people.pop();
+
+        document.write(`<p>${people.join(", ")}</p><br>`);
+
+        resetPeople();
+
+        document.write(`<h2>Remove Mahatma Gandhi with splice. Again remember to use indexOf() first.</h2>`);
+        people.splice(people.indexOf('Mahatma Gandhi'), 1);
+
+        document.write(`<p>${people.join(", ")}</p><br>`);
+
+        resetPeople();
+    </script>
+</body>
+
+</html>
