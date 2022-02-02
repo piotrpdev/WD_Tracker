@@ -10,28 +10,25 @@
     <h1>Calculator (with valid numbers) </h1>
     <script>
         const isFilled = (field) => {
-            if (field === null || field.length === 0 || (isNaN(field))) {
-                return false
+            while (field === null || field.length === 0 || (isNaN(field))) {
+                field = prompt("Invalid input, please try again", "")
             }
-            return true
+
+            return field
         }
 
-        let firstNum = parseInt(prompt("Enter the first number:"));
-        let secondNum = parseInt(prompt("Enter the second number:"));
+        let firstNum = isFilled(parseInt(prompt("Enter the first number:")));
+        let secondNum = isFilled(parseInt(prompt("Enter the second number:")));
 
-        if (!isFilled(firstNum) || !isFilled(firstNum)) {
-            document.write(`<p>One of the numbers entered was invalid</p>`)
-        } else {
-            let addResult = firstNum + secondNum;
-            let subResult = firstNum - secondNum;
-            let mulResult = firstNum * secondNum;
-            let divResult = firstNum / secondNum;
+        let addResult = firstNum + secondNum;
+        let subResult = firstNum - secondNum;
+        let mulResult = firstNum * secondNum;
+        let divResult = firstNum / secondNum;
 
-            document.write(`Addition result: ${firstNum} + ${secondNum} = ${addResult}<br>`);
-            document.write(`Subtraction result: ${firstNum} - ${secondNum} = ${subResult}<br>`);
-            document.write(`Multiplication result: ${firstNum} * ${secondNum} = ${mulResult}<br>`);
-            document.write(`Division result: ${firstNum} / ${secondNum} = ${divResult}`);
-        }
+        document.write(`Addition result: ${firstNum} + ${secondNum} = ${addResult}<br>`);
+        document.write(`Subtraction result: ${firstNum} - ${secondNum} = ${subResult}<br>`);
+        document.write(`Multiplication result: ${firstNum} * ${secondNum} = ${mulResult}<br>`);
+        document.write(`Division result: ${firstNum} / ${secondNum} = ${divResult}`);
     </script>
 </body>
 
