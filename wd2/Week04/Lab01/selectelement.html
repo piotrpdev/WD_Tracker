@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week Four</title>
+</head>
+<body>
+    <ul id="star-wars-characters">
+        <li class="character luke" data-type="hero">Luke Skywalker</li>
+        <li class="character yoda" data-type="master">Yoda</li>
+        <li class="character badboy" data-type="villain">Darth Vader</li>
+    </ul>
+    <script>
+        const characters = document.querySelector('#star-wars-characters');
+        
+        console.log(document.querySelector('ul'));
+        console.log(characters);
+
+        console.log(characters.querySelector('.luke'));
+        console.log(characters.querySelector('li'));
+        console.log(characters.querySelector('[data-type="hero"]'));
+
+        console.log(characters.querySelector('.yoda'));
+        console.log(characters.querySelector('[data-type="master"]'));
+
+        console.log(characters.querySelector('.badboy'));
+        console.log(characters.querySelector('[data-type="villain"]'));
+    </script>
+</body>
+</html>

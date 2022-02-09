@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week Four</title>
+    <style>
+        .yay {
+            font-weight: bold;
+        }
+
+        .nay {
+            font-style: italic;
+        }
+
+        .star-wars {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="star-wars">
+        <div class="character" data-type="good-guy">Luke Skywalker</div>
+        <div class="character" data-type="good-guy">Yoda</div>
+        <div class="character" data-type="villain">Darth Vader</div>
+    </div>
+    <script>
+        const goodGuys = document.querySelectorAll('[data-type="good-guy"]');
+
+        goodGuys.forEach(goodGuy => {
+            goodGuy.classList.add('yay');
+        });
+
+        const badGuys = document.querySelectorAll('[data-type="villain"]');
+
+        badGuys.forEach(badGuy => {
+            badGuy.classList.add('nay');
+        });
+
+        const characters = document.querySelectorAll('.character');
+
+        characters.forEach(character => {
+            character.classList.add('star-wars');
+        });
+    </script>
+</body>
+
+</html>
