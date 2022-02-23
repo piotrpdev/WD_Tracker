@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 05</title>
+  </head>
+  <body>
+    <div class="characters">
+      <ol class="humans">
+        <li>Gandalf</li>
+        <li>Saruman</li>
+        <li>Aragorn</li>
+        <li>Boromir</li>
+        <li>Faramir</li>
+      </ol>
+    </div>
+    <script>
+        const ar = document.querySelector('.humans').children[2];
+        document.querySelector('.humans').removeChild(ar);
+
+        document.querySelector('.humans').appendChild(ar);
+    </script>
+  </body>
+</html>
