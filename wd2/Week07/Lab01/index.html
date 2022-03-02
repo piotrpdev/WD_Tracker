@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Transition</title>
+    <link rel="stylesheet" href="css/transition.css" >
+
+</head>
+<body>
+    <div class="container">
+        <img id="car" src="img/car.jpg" />
+        <a href="#" id="driveCar" class="btn">Drive</a>
+        <a href="#" id="reverseCar" class="btn">Reverse</a>
+    </div>
+  
+    <script>
+	const drive = document.querySelector('#driveCar');
+	const car = document.querySelector('#car');
+	const reverse = document.querySelector('#reverseCar');
+	
+    drive.addEventListener('click', function(){
+        car.classList.add('drive');
+        car.classList.remove('reverse');
+    });
+
+    reverse.addEventListener('click', function(){
+        car.classList.add('reverse');
+        car.classList.remove('drive');
+    });
+	</script>
+</body>
+</html>

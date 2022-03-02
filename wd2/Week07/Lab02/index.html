@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Easter Egg Order</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class ="ui raised stackable segment">
+    <header class = "ui center aligned padded raised stackable grid segment">
+      <h1>
+        Easter Egg Order
+      </h1>
+    </header>
+
+    <main class = "ui two column raised stackable  grid segment">
+      <div class="ui seven wide column">
+      <form id ="orderitem" class = "ui form">
+          <div class="inline field">
+            <label for = "qty" class = "two wide field">Quantity</label>
+            <input name="qty" id = "qty" type="number" min=1 max = 5  value = "1" required class = "ui four wide field">
+          </div>
+          <div class="inline field">
+            <label for = "itemsize" class = "two wide field">Size</label>
+            <select name="itemsize" id="itemsize" class="ui seven wide field" >
+              <option value ="3.50" data-size="Small">Small - &euro;3.50</option>
+              <option value ="6.00" data-size="Medium">Medium - &euro;6.00</option>
+              <option value ="8.00" data-size="Large">Large - &euro;8.00</option>
+              <option value ="9.50" data-size="Extra Large">Extra Large - &euro;9.50</option>
+			</select> 
+          </div>
+          <div class="field">
+           <div class="ui checkbox">
+		       <input type="checkbox" name="del" id="del" value = "5.00">
+            <label for = "del" >Home Delivery</label>
+           </div>
+          </div>
+		  
+           <button type="submit" id="submit-item" class = "ui button">Submit Item</button>
+       </form>
+      </div>
+      <div class="ui nine wide column">
+        <section>
+          <h2>Order Summary</h2>
+		  <div class = "ui two column grid">
+
+		  <div class = "ui column">
+           <p id = "order"></p>
+		  </div>
+		  <div class = "ui column">
+		   <img src="images/egg.jpg" alt = "Easter Egg">
+		  </div>
+		  </div>
+        </section>
+      </div>
+    </main>
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script  src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.js"></script>
+    <script src="js/client.js"></script>
+  </body>
+</html>

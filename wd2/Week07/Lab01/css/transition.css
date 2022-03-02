@@ -1,0 +1,50 @@
+.container {
+    position: absolute;
+    width:720px;
+    height:100px;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin:auto;
+    padding:1px;
+    border-bottom:4px dashed;
+}
+
+#car {
+    position:absolute;
+    bottom:0px;
+    width:134px;
+    height:81px;
+}
+
+.btn {
+    position:absolute;
+    font-family:sans-serif;
+    padding:10px;
+    background:rgb(0,200,0);
+    color:#FFF;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+#driveCar {
+    top:120px;
+}
+
+#reverseCar {
+    top:120px;
+    left:80px;
+    background:rgb(200,100,0);
+}
+
+.drive {
+    transform: translateX(580px);
+    transition: transform 5s;
+}
+
+.reverse {
+    transform: translateX(0px);
+    transition: transform 5s;
+}
+
