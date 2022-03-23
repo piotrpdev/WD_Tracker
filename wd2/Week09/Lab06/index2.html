@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lightbox</title>
+<link href="css/gallery2.css" rel="stylesheet">
+<link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
+    />
+</head>
+<body>
+<div id = "container">
+<h1>Image Lightbox</h1>
+<h2 class="text-center text-lg">
+  Have a look at these lovely
+  <span data-fancybox-trigger="Colours" class="trigger"
+    >Colours</span>
+</h2>
+<div id="gallery">
+  <a data-fancybox="Colours" href="images/large/blue.jpg"><img src="images/small/blue_h.jpg" width="70" height="70" alt="Blue"></a>
+  <a data-fancybox="Colours" href="images/large/yellow.jpg"> <img src="images/small/yellow_h.jpg" width="70" height="70" alt="Yellow"/ </a>
+  <a data-fancybox="Colours" href="images/large/green.jpg"><img src="images/small/green_h.jpg" width="70" height="70" alt="Green"/ </a>
+  <a data-fancybox="Colours" href="images/large/orange.jpg"><img src="images/small/orange_h.jpg" width="70" height="70" alt="Orange"></a>
+  <a data-fancybox="Colours" href="images/large/purple.jpg"><img src="images/small/purple_h.jpg" width="70" height="70" alt="Purple"> </a>
+  <a data-fancybox="Colours" href="images/large/red.jpg"><img src="images/small/red_h.jpg" width="70" height="70" alt="Red"></a>
+</div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+		crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+<script>
+  $(document).ready(function(){
+    Fancybox.bind('[data-fancybox="Colours"]', {
+    infinite: false,
+    caption: function (fancybox, carousel, slide) {
+    return (
+      `${slide.index + 1} / ${carousel.slides.length} <br />` + slide.$thumb.alt
+    );
+  },
+});
+  })
+  </script>
+<script src="js/rollover.js"></script>
+</body>
+</html>

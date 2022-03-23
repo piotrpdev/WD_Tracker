@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Image Rollover and Replacement</title>
+<link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+<div id = "container">
+<div id="gallery">
+  <a href="images/flower1.jpg" title = "Yellow Flower"><img src="images/thumbnail/flower1.jpg" width="120" height="90" alt="Yellow Flower"></a>
+  <a href="images/flower2.jpg" title = "Pink Flower"><img src="images/thumbnail/flower2.jpg" width="120" height="90" alt="Pink Flower"></a>
+  <a href="images/flower3.jpg" title = "Light Pink Flower"><img src="images/thumbnail/flower3.jpg" width="120" height="90" alt="Light Pink Flower"></a>
+  <a href="images/flower4.jpg" title = "Dark Pink Flower"><img src="images/thumbnail/flower4.jpg" width="120" height="90" alt="Dark Pink Flower"></a>
+  <a href="images/flower5.jpg" title = "Red Flower"><img src="images/thumbnail/flower5.jpg" width="120" height="90" alt="Red Flower"></a>
+  <a href="images/flower6.jpg" title = "Daisy"><img src="images/thumbnail/flower6.jpg" width="120" height="90" alt="Daisy"></a>
+  </div>
+  <div id = "photo"></div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+		crossorigin="anonymous">
+</script>
+<script>
+$(document).ready(() => {
+
+$('#gallery img').on({
+   mouseenter:(evt) => {
+      thisimage = $(evt.currentTarget).attr('src')
+      newimage = thisimage.replace('thumbnail', 'bw')
+      $(evt.currentTarget).attr('src', newimage)
+   },
+   mouseleave:(evt) => {
+	  $(evt.currentTarget).attr('src', thisimage)
+   }
+})
+
+$('#gallery a').on('click', (evt) => {
+     evt.preventDefault()
+     let imgPath = $(evt.currentTarget).attr('href')
+     let newImage = $(`<img src=${imgPath} alt = "" >`)
+     let oldImage = $('#photo img')
+     $('#photo').prepend(newImage)
+     oldImage.fadeOut(4500,(evt) =>{
+          $(evt.currentTarget).remove()
+     })
+})
+
+$('#gallery a:first').click()
+ 
+}) // end ready()
+</script>
+</body>
+</html>

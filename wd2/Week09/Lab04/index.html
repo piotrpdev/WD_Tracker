@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Before & After Image</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<link rel="stylesheet" href="css/twentytwenty.css">
+<link rel="stylesheet" href="css/myStyle.css">
+
+
+</head>
+<body>
+<div class="ui container">
+<header class="ui sixteen wide centered grid">
+<h1>Before and After</h1>
+</header>
+<div id="beforeafter">
+    <img src = "images/before.jpg"> <!-- The before image is first --> 
+    <img src = "images/after.jpg"> <!-- The after image is last -->
+   </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+		crossorigin="anonymous">
+</script>
+<script src="js/jquery.event.move.js"></script>
+<script src="js/jquery.twentytwenty.js"></script>
+<script  src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#beforeafter").twentytwenty({
+    default_offset_pct: 0.7
+});
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+body {
+	font: 62.5% "Trebuchet MS", Arial, sans-serif;
+}
+
+#container{
+	width: 100%;
+	margin: 0 auto;
+        padding:0;
+}
+h1 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #990000;
+	padding: .3em;
+	font-weight: normal;
+}
+
+h2 {
+        font-size:200%;
+}
+
+#gallery {
+	width: 100%;
+	padding:0;
+	margin: 0 0 0 12%;
+	overflow:hidden;
+}
+
+#gallery a img {
+        float:left;
+	padding:1%;
+	border: 1px solid #666;
+	margin: 2px 5px;
+}
+
+
+#photo {
+        padding-top:2em;
+        margin-left:25%;
+}
+
+#photo img {
+	padding: 2em;
+	border: 1px solid #333;
+	position: absolute;
+}
+
+
+
+
+

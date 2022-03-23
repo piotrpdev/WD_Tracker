@@ -1,0 +1,16 @@
+body {
+	background-color: white;
+}
+
+.ui.container {
+	margin-top:2em;
+}
+
+
+#beforeafter {
+	margin-top:1em;
+}
+
+#beforeafter img{
+    width:100%;
+}
