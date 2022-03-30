@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JSON</title>
+</head>
+
+<body>
+  <xmp>
+  </xmp>
+
+  <script>
+    const employee = {
+      employeeID: "798523",
+      firstName: "Sam",
+      lastName: "Jackson",
+      role: "Manager",
+      languageExpertise: ["Java", "JavaScript", "Python"],
+      car: {
+        makeModel: "Ford Mondeo",
+        makeYear: "2019",
+        colour: "Red",
+        type: "Saloon"
+      }
+    };
+
+    const employee2 = {
+      employeeID: "896586",
+      firstName: "Jill",
+      lastName: "Flynn",
+      role: "Senior Manager",
+      languageExpertise: ["Ruby", "JavaScript"],
+      car: {
+        makeModel: "Hyundai Kona",
+        makeYear: "2020",
+        colour: "White",
+        type: "Hatchback"
+      }
+    };
+
+    console.log(employee.employeeID);
+    console.log(`${employee.firstName} ${employee.lastName}`);
+
+    employee.languageExpertise.forEach(lang => console.log(lang));
+    console.log(`${employee.car.makeModel}-${employee.car.makeYear}`);
+
+    const employees = [employee, employee2];
+    employees.forEach(emp => console.log(`${emp.firstName} ${emp.lastName}`))
+
+    document.querySelector('xmp').innerHTML = JSON.stringify(employees, null, 2);
+  </script>
+</body>
+
+</html>

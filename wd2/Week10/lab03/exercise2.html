@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Helpers Exercise 2</title>
+</head>
+
+<body>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+  <script id="handle" type="text/x-handlebars-template">
+    Jack on {{date}}<br>
+    {{{comment}}}
+
+    {{#if social}}
+      <h3>Social Media</h3>
+      <ul>
+        {{#each social}}
+        <li>{{site}} - username: {{name}}</li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <h3>No Social Media</h3>
+    {{/if}}
+  </script>
+  <script>
+    $(document).ready(function () {
+      const data = {
+        name: "Jack",
+        date: "12/03/18",
+        comment: "This is a really <strong>awesome</strong> tutorial. Thanks.",
+        social: [
+          {
+            site: "Twitter",
+            name: "Jack_Franklin"
+          },
+          {
+            site: "Github",
+            name: "jackfranklin"
+          }
+        ]
+      }
+
+      let template = Handlebars.compile($('#handle').html());
+
+      let output = template(data);
+
+      $('body').prepend(output);
+
+    })
+  </script>
+</body>
+
+</html>
