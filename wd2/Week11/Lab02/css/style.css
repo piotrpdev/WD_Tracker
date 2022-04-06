@@ -1,0 +1,24 @@
+    .ui.container {
+    margin-top:5%;
+    }
+
+    .description {
+	  font-style:italic;
+	  font-weight:bold;
+    }
+
+    .date {
+      color:purple;
+     }
+
+    form {
+      padding:1em;
+    }
+
+    #btncall {
+      margin-top:1em;
+    }
+
+    ul {
+      border-bottom:solid black 1px;
+    }

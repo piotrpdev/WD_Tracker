@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.css">
+    <link rel="stylesheet" href="css/style.css" >
+    <title>Blog</title>
+</head>
+<body>
+<div class = "ui container">
+<script id="blog" type="text/x-handlebars-template">
+  <h1 class="ui header">{{title}}</h1>
+  <p><b>Published: {{date}}</b></p>
+
+  <p>{{{content}}}</p>
+
+  <div>
+    {{#each comments}}
+      <div>
+        <ul>
+          <li>{{user}} - {{formatDate date}}</li>
+          <li>{{{comment}}}</li>
+        </ul>
+      </div>
+    {{/each}}
+  </div>
+</script>
+
+<div id = "content-placeholder"></div>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+		crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<script  src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.js"></script>
+<script src = "js/blog.js"></script>
+</body>
+</html>
+
+

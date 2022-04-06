@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.css">
+    <title>Product Listing</title>
+    <style>
+
+    .ui.container {
+    margin-top:3%;
+    }
+
+    </style>
+</head>
+<body>
+<div class = "ui container">
+ <h1>Product Listing</h1>
+ <div id = "content-placeholder"></div>
+
+</div>
+
+<script id="products" type="text/x-handlebars-template" >
+   <table class="ui striped selectable table">
+   <thead>
+   <tr><th>Product</th><th>Quantity</th><th>Cost</th><th>Total Price</th></tr>
+   </thead>
+   <tbody>
+    {{#each this}}
+    <tr>
+    <th>{{productName}}</th>
+    <td>{{quantity}}</td>
+    <td>{{unitCost}}</td>
+    <td>{{total quantity unitCost}}</td>
+    </tr>
+    {{/each}}
+   </tbody>
+</table>
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+		crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<script  src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.js"></script>
+<script>
+$(document).ready(function() {
+
+const products =
+[{
+
+  "pid": "d9000001",
+  "productName": "Bluetooth Speaker",
+  "supplier": "Creative Labs",
+  "quantity": 90,
+  "unitCost": 35
+}, {
+  "pid": "d9000002",
+  "productName": "Lifechat Headset",
+  "supplier": "Microsoft",
+  "quantity": 85,
+  "unitCost": 29.99
+}, {
+  "pid": "d9000003",
+  "productName": "Car Tablet Holder",
+  "supplier": "Port Muskoka ",
+  "quantity": 93,
+  "unitCost": 24.99
+},
+{
+  "pid": "d9000004",
+  "productName": "Chromecast Audio",
+  "supplier": "Google",
+  "quantity": 76,
+  "unitCost": 39
+},
+{
+  "pid": "d9000005",
+  "productName": "Laptop Sleeve",
+  "supplier": "Port Milano",
+  "quantity":891,
+  "unitCost": 29.99
+}]
+
+
+
+ formatCurrency = (total) => {
+    total = total.toString().replace(/\u20ac|\,/g,'')
+    if(isNaN(total)) {
+	  total = "0"
+	}
+    sign = (total == (total = Math.abs(total)))
+    total = total.toFixed(2)
+    elements= total.split(".")
+    total = elements[0]
+    cents = elements[1]
+    for (var i = 0; i < Math.floor((total.length-(1+i))/3); i++)
+     {total = total.substring(0,total.length-(4*i+3))+','+
+      total.substring(total.length-(4*0+3))
+     }
+    return (((sign)?'':'-') + '\u20ac' + total + '.' + cents)
+}
+
+Handlebars.registerHelper('total', (quantity, unitCost) => formatCurrency(quantity * unitCost));
+	
+let template = Handlebars.compile($('#products').html())
+
+let output = template(products)
+
+$("#content-placeholder").html(output)
+
+
+})
+</script>
+</body>
+</html>
+
+
